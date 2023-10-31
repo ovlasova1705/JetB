@@ -20,7 +20,7 @@ public class JetBrainsTest extends TestBase {
 
     @Tag("remote1")
     @Test
-    @DisplayName("1.Verify Website Can Be Opened")
+    @DisplayName("Verify Website Can Be Opened")
     void firstTest() {
         testPages.openPage();
     }
@@ -28,7 +28,7 @@ public class JetBrainsTest extends TestBase {
 
     @Tag("remote1")
     @Test
-    @DisplayName("2.Verify Redirection to Store Page from Cart Icon Click")
+    @DisplayName("Verify Redirection to Store Page from Cart Icon Click")
     void secondTest() {
         testPages.redirectionStore();
     }
