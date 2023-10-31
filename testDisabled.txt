@@ -1,0 +1,13 @@
+    @Disabled
+    @CsvSource(value = {
+            "java, IntelliJ IDEA – the Leading Java and Kotlin IDE",
+            "kotlin, IntelliJ IDEA – the Leading Java and Kotlin IDE",
+    })
+    @ParameterizedTest(name = "first result for {0} should contain {1}")
+    void csvSourceParamTest(String testData, String expectedResult) {
+        Selenide.open("https://www.jetbrains.com/");
+        $("button[aria-label='Open search']").click();
+        $("input[placeholder='Ctrl+K for advanced search']").setValue(testData);
+        $$("[data-test='result-title']").find(text(expectedResult)).shouldBe(visible);
+
+    }
