@@ -38,10 +38,8 @@ public class JetBrainsParamTest extends TestBase {
 
 
     @Tag("remote2")
-    @ParameterizedTest(name = "List of buttons (1) should show up for language {0} ")
-    @DisplayName("5.Verify Page Language Change")
+    @ParameterizedTest(name = "5.Verify Page Language Change - List of buttons (1) should show up for language {0} ")
     @MethodSource(value = "dataProvider")
-    @Description("Test for language change")
     void siteShouldContainsAllOfGivenButtonsForGivenLanguage(EnumLang enumLang, String expectedResult) {
         testPages.checkLanguageChange(enumLang,expectedResult);
     }
