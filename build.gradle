@@ -1,0 +1,73 @@
+plugins {
+    id 'java-library'
+    id 'io.qameta.allure' version '2.11.2'
+}
+repositories {
+    mavenCentral()
+}
+
+allure {
+    report {
+        version.set("2.19.0")
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.19.0")
+            }
+        }
+    }
+}
+
+group 'guru.qa'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    implementation 'org.jetbrains:annotations:24.0.0'
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter-engine:5.10.0',
+            'org.junit.jupiter:junit-jupiter-api:5.10.0',
+            'com.codeborne:selenide:6.18.0',
+            'com.github.javafaker:javafaker:1.0.2',
+            'org.slf4j:slf4j-simple:2.0.6',
+            'org.junit.jupiter:junit-jupiter-params:5.10.0',
+            'io.qameta.allure:allure-selenide:2.23.0',
+            'io.qameta.allure:allure-junit5:2.23.0'
+
+    )
+
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+
+
+tasks.test {
+    useJUnitPlatform()
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+
+
+
+task JetBrainsTest(type: Test) {
+    useJUnitPlatform {
+        includeTags("remote1")
+    }
+}
+
+task JetBrainsParamTest(type: Test) {
+    useJUnitPlatform {
+        includeTags("remote2")
+    }
+}
