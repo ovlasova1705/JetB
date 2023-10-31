@@ -19,18 +19,17 @@ import static com.codeborne.selenide.Selenide.$$;
 public class JetBrainsParamTest extends TestBase {
 
 
-
-    @ValueSource(strings = {"java", "kotlin"})
     @Tag("remote2")
-    @ParameterizedTest
+    @ValueSource(strings = {"java", "kotlin"})
+    @ParameterizedTest(name = "Showing results for {0}")
     @DisplayName("3.Verify Proper Functioning of Search - Short")
     void valueSourceCommon(String testData) {
         testPages.openSearch(testData);
     }
 
-    @CsvFileSource(resources = {"/testData/TestDataJet.csv"})
     @Tag("remote2")
-    @ParameterizedTest
+    @CsvFileSource(resources = {"/testData/TestDataJet.csv"})
+    @ParameterizedTest(name = "first result for {0} should contain {1}")
     @DisplayName("4.Verify Proper Functioning of Search -Extended")
     void csvFileSourceParametrizedTest(String testData, String expectedResult) {
         testPages.openSearchExtended(testData, expectedResult);
@@ -38,7 +37,7 @@ public class JetBrainsParamTest extends TestBase {
 
 
     @Tag("remote2")
-    @ParameterizedTest
+    @ParameterizedTest(name = "List of buttons (1) should show up for language {0} ")
     @DisplayName("5.Verify Page Language Change")
     @MethodSource(value = "dataProvider")
     void siteShouldContainsAllOfGivenButtonsForGivenLanguage(EnumLang enumLang, String expectedResult) {
