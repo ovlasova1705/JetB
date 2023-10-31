@@ -17,25 +17,20 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class JetBrainsTest extends TestBase {
 
-    @DisplayName("1.Verify Website Can Be Opened")
+
     @Tag("remote1")
     @Test
+    @DisplayName("1.Verify Website Can Be Opened")
     void firstTest() {
         testPages.openPage();
-//        Selenide.open("https://www.jetbrains.com/");
-//        $(".rs-text-1").shouldHave(text("Essential tools for software developers and teams"))
-//                .shouldBe(visible);
     }
 
-    @DisplayName("2.Verify Redirection to Store Page from Cart Icon Click")
+
     @Tag("remote1")
     @Test
+    @DisplayName("2.Verify Redirection to Store Page from Cart Icon Click")
     void secondTest() {
         testPages.redirectionStore();
-//        Selenide.open("https://www.jetbrains.com/");
-//        $("[data-test='site-header-cart-action']").click();
-//        $(".jb-buy-page__header").shouldHave(text("Subscription Options and Pricing"))
-//                .shouldBe(visible);
     }
 }
 
