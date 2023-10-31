@@ -22,7 +22,7 @@ public class JetBrainsParamTest extends TestBase {
 
     @ValueSource(strings = {"java", "kotlin"})
     @Tag("remote2")
-    @ParameterizedTest(name = "Showing results for {0}")
+    @ParameterizedTest
     @DisplayName("3.Verify Proper Functioning of Search - Short")
     void valueSourceCommon(String testData) {
         testPages.openSearch(testData);
@@ -38,7 +38,7 @@ public class JetBrainsParamTest extends TestBase {
 
 
     @Tag("remote2")
-    @ParameterizedTest(name = "List of buttons (1) should show up for language {0} ")
+    @ParameterizedTest
     @DisplayName("5.Verify Page Language Change")
     @MethodSource(value = "dataProvider")
     void siteShouldContainsAllOfGivenButtonsForGivenLanguage(EnumLang enumLang, String expectedResult) {
