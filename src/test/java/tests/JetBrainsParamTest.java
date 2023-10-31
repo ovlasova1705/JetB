@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Selenide;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -40,6 +41,7 @@ public class JetBrainsParamTest extends TestBase {
     @ParameterizedTest(name = "List of buttons (1) should show up for language {0} ")
     @DisplayName("5.Verify Page Language Change")
     @MethodSource(value = "dataProvider")
+    @Description("Test for language change")
     void siteShouldContainsAllOfGivenButtonsForGivenLanguage(EnumLang enumLang, String expectedResult) {
         testPages.checkLanguageChange(enumLang,expectedResult);
     }
