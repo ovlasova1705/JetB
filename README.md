@@ -58,9 +58,9 @@ gradle clean test
 
 > `${BROWSER}` - browser name (_default name - <code>chrome</code>_).
 >
-> `${BROWSER_VERSION}` - версия браузера (_default name - <code>100.0</code>_).
+> `${BROWSER_VERSION}` - browser version (_default name - <code>100.0</code>_).
 >
-> `${BROWSER_SIZE}` - размер окна браузера (_default name- <code>1920x1080</code>_).
+> `${BROWSER_SIZE}` - browser window size (_default name- <code>1920x1080</code>_).
 >
 > `${REMOTE_URL}` - remote server address where tests will be run.
 
@@ -109,7 +109,7 @@ As soon as the build is completed, a message with the test report is sent to the
 
 ## <img width="4%" title="Selenoid" src="media/logo/Selenoid.svg"> Test running example in Selenoid
 
-A video is attached to each test in the report.
+Each test in the report includes an attached video.
 
 <p align="center">
   <img title="Selenoid Video" src="media/video/testvideo.gif">
