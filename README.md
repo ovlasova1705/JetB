@@ -43,17 +43,17 @@
 ### Local running tests
 
 ```
-gradle clean test 
+gradle clean JetBrainsTest JetBrainsParamTest
 ```
 
 ### Remote running tests
 
 ```
-gradle clean test 
-"-Dbrowser=${BROWSER}" 
-"-DbrowserVersion=${BROWSER_VERSION}" 
-"-DbrowserSize=${BROWSER_SIZE}" 
-"-DremoteUrl=${REMOTE_URL}"
+gradle clean JetBrainsTest JetBrainsParamTest 
+-Dbrowser=${BROWSER}
+-DbrowserVersion=${BROWSER_VERSION} 
+-DbrowserSize=${BROWSER_SIZE} 
+-DremoteUrl=${REMOTE_URL}
 ```
 
 > `${BROWSER}` - browser name (_default name - <code>chrome</code>_).
