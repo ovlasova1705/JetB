@@ -14,6 +14,8 @@ import static com.codeborne.selenide.Selenide.*;
 public class TestPages {
 
     String url = "https://www.jetbrains.com/";
+    String headerText = "Essential tools for software developers and teams";
+    String titleText = "Subscription Options and Pricing";
     SelenideElement header= $(".rs-text-1"),
             cartIcon = $("[data-test='site-header-cart-action']"),
             headerBuyPage = $(".jb-buy-page__header"),
@@ -25,9 +27,11 @@ public class TestPages {
             listItemContent = $$(".wt-list-item__content"),
             mainMenuResult = $$("[data-test='main-menu']");
 
+
+
     public TestPages openPage(){
         open(url);
-        header.shouldHave(text("Essential tools for software developers and teams"))
+        header.shouldHave(text(headerText))
                 .shouldBe(visible);
         return this;
     }
@@ -35,7 +39,7 @@ public class TestPages {
     public TestPages redirectionStore(){
         Selenide.open(url);
         cartIcon.click();
-        headerBuyPage.shouldHave(text("Subscription Options and Pricing"))
+        headerBuyPage.shouldHave(text(titleText))
                 .shouldBe(visible);
         return this;
     }
